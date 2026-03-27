@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Delta Team Industry">
+  <title>Delta Team Industry | Contact</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Contact Page Specific Styles */
+    .page-hero {
+      background-color: var(--primary-orange);
+      color: var(--bg-white);
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0;
+      color: var(--bg-white);
+    }
+    
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-top: 40px;
+    }
+
+    .contact-info-card {
+      background: var(--bg-light-gray);
+      padding: 40px;
+      border-radius: 8px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .info-icon {
+      font-size: 1.5rem;
+      color: var(--primary-orange);
+      margin-right: 20px;
+      margin-top: 5px;
+    }
+
+    .info-item h4 {
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+
+    .info-item p {
+      color: var(--text-gray);
+    }
+
+    .contact-form {
+      background: var(--bg-white);
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid var(--border-color);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color var(--transition-speed);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-orange);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .error-msg {
+      color: #dc3545;
+      font-size: 0.85rem;
+      margin-top: 5px;
+      display: none;
+    }
+
+    .success-msg {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo-container">
+        <img src="651883048_771370736047629_4408473075126551943_n.png" alt="Delta Team Industry Logo" class="site-logo">
+      </a>
+
+      <nav class="nav-container">
+        <div class="main-nav">
+          <ul>
+            <li><a href="index.html" data-lang-key="nav_home">Home</a></li>
+            <li><a href="about.html" data-lang-key="nav_about">About</a></li>
+            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+            <li><a href="gallery.html" data-lang-key="nav_gallery">Gallery</a></li>
+            <li><a href="partners.html" data-lang-key="nav_partners">Partners</a></li>
+            <li><a href="contact.html" class="active" data-lang-key="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="header-utils-mobile" style="display: none;">
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="fr">FR</button> |
+            <button class="lang-btn" data-lang="it">IT</button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-utils">
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="fr">FR</button> |
+          <button class="lang-btn" data-lang="it">IT</button>
+        </div>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-lang-key="nav_contact">Contact Us</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout">
+          
+          <!-- Contact Info -->
+          <div>
+            <h2 class="section-title" style="text-align: left;" data-lang-key="nav_contact">Get In Touch</h2>
+            <div class="contact-info-card">
+              
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <h4>Office Address</h4>
+                  <p>123 Industrial Avenue<br>Manufacturing District, City 40596</p>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <h4>Phone Number</h4>
+                  <p>+1 (555) 123-4567</p>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <h4>Email Address</h4>
+                  <p>info@deltateamindustry.com</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Optional Map -->
+            <div style="margin-top: 30px; border-radius: 8px; overflow: hidden; height: 300px; background: var(--bg-light-gray); display: flex; align-items: center; justify-content: center; color: var(--text-gray);">
+               <!-- Replace with actual Google Maps Iframe -->
+               <p><i class="fa-solid fa-map"></i> Google Maps Location</p>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div>
+            <div class="contact-form">
+              <div class="success-msg" id="form-success">Thank you! Your message has been sent successfully.</div>
+              
+              <form id="contactForm" onsubmit="return false;">
+                
+                <div class="form-group">
+                  <label for="name" data-lang-key="form_name">Your Name</label>
+                  <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                  <div class="error-msg" id="err-name">Please enter your name.</div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email" data-lang-key="form_email">Your Email</label>
+                  <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                  <div class="error-msg" id="err-email">Please enter a valid email address.</div>
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" data-lang-key="form_phone">Phone Number</label>
+                  <input type="tel" id="phone" class="form-control" placeholder="+1..." required>
+                  <div class="error-msg" id="err-phone">Please enter your phone number.</div>
+                </div>
+
+                <div class="form-group">
+                  <label for="subject" data-lang-key="form_subject">Subject</label>
+                  <input type="text" id="subject" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="message" data-lang-key="form_message">Message</label>
+                  <textarea id="message" class="form-control" required></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;" onclick="validateForm()" data-lang-key="form_submit">Send Message</button>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- About Col -->
+        <div class="footer-col">
+          <a href="index.html" style="display: inline-block; margin-bottom: 20px;">
+            <img src="651883048_771370736047629_4408473075126551943_n.png" alt="Delta Team Industry Logo" class="site-logo">
+          </a>
+          <p style="margin-bottom: 15px;">Votre partenaire de confiance pour tous vos besoins en services énergétiques et industriels au Maroc.</p>
+          <ul class="footer-contact" style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+              <i class="fa-solid fa-location-dot" style="color: var(--primary-orange); margin-top: 4px;"></i>
+              <span>42 avenue des forces auxiliaires, Etage 1, Hay Raja, Casablanca</span>
+            </li>
+            <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+              <i class="fa-solid fa-phone" style="color: var(--primary-orange);"></i>
+              <span style="direction: ltr; display: inline-block;">+212 5 22 70 96 51</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 10px;">
+              <i class="fa-regular fa-envelope" style="color: var(--primary-orange);"></i>
+              <span>Deltateamindustry.ma@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 data-lang-key="footer_quick_links">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-lang-key="nav_home">Home</a></li>
+            <li><a href="about.html" data-lang-key="nav_about">About</a></li>
+            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+            <li><a href="gallery.html" data-lang-key="nav_gallery">Gallery</a></li>
+            <li><a href="partners.html" data-lang-key="nav_partners">Partners</a></li>
+            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <h4 data-lang-key="footer_our_services">Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#metal" data-lang-key="srv_metal">Metal Construction</a></li>
+            <li><a href="services.html#mech" data-lang-key="srv_mech">Mechanical Manufacturing</a></li>
+            <li><a href="services.html#maint" data-lang-key="srv_maint">Industrial Mechanical Maintenance</a></li>
+            <li><a href="services.html#solar" data-lang-key="srv_solar">Structure for Solar Kit</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p data-lang-key="footer_rights">&copy; 2026 Delta Team Industry. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Native Contact Form Validation Logic
+    function validateForm() {
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const phone = document.getElementById('phone');
+      
+      let isValid = true;
+      
+      // Reset errors
+      document.querySelectorAll('.error-msg').forEach(el => el.style.display = 'none');
+
+      if (!name.value.trim()) {
+        document.getElementById('err-name').style.display = 'block';
+        isValid = false;
+      }
+      
+      if (!email.value.trim() || !email.value.includes('@')) {
+        document.getElementById('err-email').style.display = 'block';
+        isValid = false;
+      }
+
+      if (!phone.value.trim()) {
+        document.getElementById('err-phone').style.display = 'block';
+        isValid = false;
+      }
+
+      if (isValid) {
+        document.getElementById('form-success').style.display = 'block';
+        document.getElementById('contactForm').reset();
+        
+        // Hide success after 5 seconds
+        setTimeout(() => {
+          document.getElementById('form-success').style.display = 'none';
+        }, 5000);
+      }
+    }
+  </script>
+</body>
+</html>

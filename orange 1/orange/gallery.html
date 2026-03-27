@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gallery of Delta Team Industry">
+  <title>Delta Team Industry | Gallery</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Gallery Page Styles */
+    .page-hero {
+      background-color: var(--primary-orange);
+      color: var(--bg-white);
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0;
+      color: var(--bg-white);
+    }
+    
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        aspect-ratio: 4/3;
+        background-color: var(--bg-light-gray);
+        cursor: pointer;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.1);
+    }
+
+    .gallery-overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(255, 127, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+    }
+
+    .gallery-overlay i {
+        color: var(--bg-white);
+        font-size: 2rem;
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay i {
+        transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo-container">
+        <img src="651883048_771370736047629_4408473075126551943_n.png" alt="Delta Team Industry Logo" class="site-logo">
+      </a>
+
+      <nav class="nav-container">
+        <div class="main-nav">
+          <ul>
+            <li><a href="index.html" data-lang-key="nav_home">Home</a></li>
+            <li><a href="about.html" data-lang-key="nav_about">About</a></li>
+            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+            <li><a href="gallery.html" class="active" data-lang-key="nav_gallery">Gallery</a></li>
+            <li><a href="partners.html" data-lang-key="nav_partners">Partners</a></li>
+            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="header-utils-mobile" style="display: none;">
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="fr">FR</button> |
+            <button class="lang-btn" data-lang="it">IT</button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-utils">
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="fr">FR</button> |
+          <button class="lang-btn" data-lang="it">IT</button>
+        </div>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-lang-key="nav_gallery">Project Gallery</h1>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="section">
+        <div class="container">
+            <p style="text-align: center; color: var(--text-gray); max-width: 700px; margin: 0 auto;">Explore our portfolio of successful projects across metal construction, mechanical manufacturing, industrial maintenance, and solar structures.</p>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Metal Construction Project">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mechanical Manufacturing">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Industrial Maintenance">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Solar Structure">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1533422617618-97190ca3458b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Engineering Project">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1621619856624-42b7ec99ecf7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Industrial Facility">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- About Col -->
+        <div class="footer-col">
+          <a href="index.html" style="display: inline-block; margin-bottom: 20px;">
+            <img src="651883048_771370736047629_4408473075126551943_n.png" alt="Delta Team Industry Logo" class="site-logo">
+          </a>
+          <p style="margin-bottom: 15px;">Votre partenaire de confiance pour tous vos besoins en services énergétiques et industriels au Maroc.</p>
+          <ul class="footer-contact" style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+              <i class="fa-solid fa-location-dot" style="color: var(--primary-orange); margin-top: 4px;"></i>
+              <span>42 avenue des forces auxiliaires, Etage 1, Hay Raja, Casablanca</span>
+            </li>
+            <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+              <i class="fa-solid fa-phone" style="color: var(--primary-orange);"></i>
+              <span style="direction: ltr; display: inline-block;">+212 5 22 70 96 51</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 10px;">
+              <i class="fa-regular fa-envelope" style="color: var(--primary-orange);"></i>
+              <span>Deltateamindustry.ma@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 data-lang-key="footer_quick_links">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-lang-key="nav_home">Home</a></li>
+            <li><a href="about.html" data-lang-key="nav_about">About</a></li>
+            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+            <li><a href="gallery.html" data-lang-key="nav_gallery">Gallery</a></li>
+            <li><a href="partners.html" data-lang-key="nav_partners">Partners</a></li>
+            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <h4 data-lang-key="footer_our_services">Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#metal" data-lang-key="srv_metal">Metal Construction</a></li>
+            <li><a href="services.html#mech" data-lang-key="srv_mech">Mechanical Manufacturing</a></li>
+            <li><a href="services.html#maint" data-lang-key="srv_maint">Industrial Mechanical Maintenance</a></li>
+            <li><a href="services.html#solar" data-lang-key="srv_solar">Structure for Solar Kit</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p data-lang-key="footer_rights">&copy; 2026 Delta Team Industry. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

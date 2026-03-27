@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Services of Delta Team Industry">
+  <title>Delta Team Industry | Services</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Services Page Styles */
+    .page-hero {
+      background-color: var(--primary-orange);
+      color: var(--bg-white);
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0;
+      color: var(--bg-white);
+    }
+    
+    .service-detail {
+        padding: 50px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .service-detail:last-child {
+        border-bottom: none;
+    }
+
+    .service-detail-inner {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .service-detail:nth-child(even) .service-detail-inner {
+        flex-direction: row-reverse;
+    }
+
+    .service-image {
+        flex: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        height: 350px;
+        background-color: var(--bg-light-gray);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-gray);
+        font-size: 4rem;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .service-text {
+        flex: 1;
+    }
+
+    .service-text h2 {
+        color: var(--primary-orange);
+        margin-bottom: 20px;
+    }
+
+    .service-text p {
+        color: var(--text-gray);
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .service-features {
+        list-style: none;
+        padding: 0;
+    }
+
+    .service-features li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 25px;
+        color: var(--text-dark);
+        font-weight: 500;
+    }
+
+    .service-features li::before {
+        content: '\f00c';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        color: var(--primary-orange);
+    }
+
+    @media (max-width: 900px) {
+        .service-detail-inner, .service-detail:nth-child(even) .service-detail-inner {
+            flex-direction: column;
+        }
+        .service-image {
+            width: 100%;
+            height: 250px;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo-container">
+        <img src="651883048_771370736047629_4408473075126551943_n.png" alt="Delta Team Industry Logo" class="site-logo">
+      </a>
+
+      <nav class="nav-container">
+        <div class="main-nav">
+          <ul>
+            <li><a href="index.html" data-lang-key="nav_home">Home</a></li>
+            <li><a href="about.html" data-lang-key="nav_about">About</a></li>
+            <li><a href="services.html" class="active" data-lang-key="nav_services">Services</a></li>
+            <li><a href="gallery.html" data-lang-key="nav_gallery">Gallery</a></li>
+            <li><a href="partners.html" data-lang-key="nav_partners">Partners</a></li>
+            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="header-utils-mobile" style="display: none;">
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="fr">FR</button> |
+            <button class="lang-btn" data-lang="it">IT</button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-utils">
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="fr">FR</button> |
+          <button class="lang-btn" data-lang="it">IT</button>
+        </div>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-lang-key="nav_services">Our Services</h1>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <div class="container">
+        
+        <!-- Service 1: Metal Construction -->
+        <section id="metal" class="service-detail">
+            <div class="service-detail-inner">
+                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="service-text">
+                    <h2 data-lang-key="srv_metal">Metal Construction</h2>
+                    <p>We provide high-quality structural metal solutions, engineered to meet strict industrial standards and deliver incredible longevity. From custom fabrication to large-scale structural frameworks, our team ensures precision in every detail.</p>
+                    <ul class="service-features">
+                        <li>Custom structural design and fabrication</li>
+                        <li>High-grade materials ensuring durability</li>
+                        <li>Compliance with international safety standards</li>
+                        <li>Expert installation teams</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 2: Mechanical Manufacturing -->
+        <section id="mech" class="service-detail">
+            <div class="service-detail-inner">
+                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="service-text">
+                    <h2 data-lang-key="srv_mech">Mechanical Manufacturing</h2>
+                    <p>Producing precision mechanical parts using modern machinery to support complex assembly and fabrication needs. Our advanced manufacturing capabilities allow us to produce complex components with tight tolerances.</p>
+                    <ul class="service-features">
+                        <li>CNC Machining and advanced milling</li>
+                        <li>Custom part manufacturing</li>
+                        <li>Prototyping and mass production</li>
+                        <li>Rigorous quality control processes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 3: Industrial Mechanical Maintenance -->
+        <section id="maint" class="service-detail">
+            <div class="service-detail-inner">
+                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="service-text">
+                    <h2 data-lang-key="srv_maint">Industrial Mechanical Maintenance</h2>
+                    <p>Comprehensive maintenance solutions aimed at extending machinery life and preventing costly operational downtime. We offer preventative and predictive maintenance services tailored to your operations.</p>
+                    <ul class="service-features">
+                        <li>Preventative maintenance scheduling</li>
+                        <li>Equipment diagnostics and repair</li>
+                        <li>Emergency breakdown support</li>
+                        <li>Facility upgrades and retrofitting</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 4: Structure for Solar Kit -->
+        <section id="solar" class="service-detail">
+            <div class="service-detail-inner">
+                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="service-text">
+                    <h2 data-lang-key="srv_solar">Structure for Solar Kit</h2>
+                    <p>Designing and constructing resilient mounting structures tailored perfectly for efficient solar power systems. Our solar structures are built to withstand harsh environmental conditions while optimizing panel performance.</p>
+                    <ul class="service-features">
+                        <li>Roof-mounted and ground-mounted structures</li>
+                        <li>Corrosion-resistant materials</li>
+                        <li>Wind and weather resilient designs</li>
+                        <li>Scalable solutions for residential or commercial use</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- About Col -->
+        <div class="footer-col">
+          <a href="index.html" style="display: inline-block; margin-bottom: 20px;">
+            <img src="651883048_771370736047629_4408473075126551943_n.png" alt="Delta Team Industry Logo" class="site-logo">
+          </a>
+          <p style="margin-bottom: 15px;">Votre partenaire de confiance pour tous vos besoins en services énergétiques et industriels au Maroc.</p>
+          <ul class="footer-contact" style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+              <i class="fa-solid fa-location-dot" style="color: var(--primary-orange); margin-top: 4px;"></i>
+              <span>42 avenue des forces auxiliaires, Etage 1, Hay Raja, Casablanca</span>
+            </li>
+            <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+              <i class="fa-solid fa-phone" style="color: var(--primary-orange);"></i>
+              <span style="direction: ltr; display: inline-block;">+212 5 22 70 96 51</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 10px;">
+              <i class="fa-regular fa-envelope" style="color: var(--primary-orange);"></i>
+              <span>Deltateamindustry.ma@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 data-lang-key="footer_quick_links">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-lang-key="nav_home">Home</a></li>
+            <li><a href="about.html" data-lang-key="nav_about">About</a></li>
+            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+            <li><a href="gallery.html" data-lang-key="nav_gallery">Gallery</a></li>
+            <li><a href="partners.html" data-lang-key="nav_partners">Partners</a></li>
+            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <h4 data-lang-key="footer_our_services">Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#metal" data-lang-key="srv_metal">Metal Construction</a></li>
+            <li><a href="services.html#mech" data-lang-key="srv_mech">Mechanical Manufacturing</a></li>
+            <li><a href="services.html#maint" data-lang-key="srv_maint">Industrial Mechanical Maintenance</a></li>
+            <li><a href="services.html#solar" data-lang-key="srv_solar">Structure for Solar Kit</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p data-lang-key="footer_rights">&copy; 2026 Delta Team Industry. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

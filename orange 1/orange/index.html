@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Delta Team Industry - Specialists in Metal Construction, Mechanical Manufacturing, Industrial Maintenance, and Solar Structures.">
+  <title>Delta Team Industry | Home</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Page Specific CSS: Home Page -->
+  <style>
+    /* Hero Slider */
+    .hero-slider {
+      position: relative;
+      height: 600px;
+      overflow: hidden;
+      background-color: var(--bg-dark-gray);
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 10;
+    }
+
+    .slide-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 20;
+      text-align: center;
+      color: var(--bg-white);
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .slide-content h2 {
+      font-size: 3.5rem;
+      color: var(--bg-white);
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    .slide-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      animation: fadeInUp 1s forwards;
+    }
+
+    /* Slider Controls */
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 30;
+    }
+
+    .slider-arrow {
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid var(--bg-white);
+      color: var(--bg-white);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: all var(--transition-speed);
+    }
+
+    .slider-arrow:hover {
+      background: var(--primary-orange);
+      border-color: var(--primary-orange);
+    }
+
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .service-card {
+      background: var(--bg-white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-icon {
+      height: 180px;
+      background-color: var(--bg-light-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: var(--primary-orange);
+    }
+
+    .service-icon.bg-img {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .service-content {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .service-content p {
+      color: var(--text-gray);
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .service-link {
+      color: var(--primary-orange);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-link:hover {
+      gap: 12px;
+      /* Slight animation */
+    }
+
+    /* About Section */
+    .about-preview {
+      background-color: var(--bg-light-gray);
+    }
+
+    .about-preview-inner {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about-preview-inner p {
+      font-size: 1.1rem;
+      color: var(--text-gray);
+      margin-bottom: 30px;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .slide-content h2 {
+        font-size: 2.5rem;
+      }
+
+      .hero-slider {
+        height: 500px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo-container">
+        <!-- Placeholder for actual PNG logo requested in specs -->
+        <img src="651883048_771370736047629_4408473075126551943_n.png" alt="Delta Team Industry Logo" class="site-logo">
+      </a>
+
+      <!-- Navigation Wrapper -->
+      <nav class="nav-container">
+        <div class="main-nav">
+          <ul>
+            <li><a href="index.html" class="active" data-lang-key="nav_home">Home</a></li>
+            <li><a href="about.html" data-lang-key="nav_about">About</a></li>
+            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+            <li><a href="gallery.html" data-lang-key="nav_gallery">Gallery</a></li>
+            <li><a href="partners.html" data-lang-key="nav_partners">Partners</a></li>
+            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Mobile Utils (Language + Socials) rendered conditionally in JS/CSS -->
+        <div class="header-utils-mobile" style="display: none;">
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="fr">FR</button> |
+            <button class="lang-btn" data-lang="it">IT</button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Desktop Utils -->
+      <div class="header-utils">
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="fr">FR</button> |
+          <button class="lang-btn" data-lang="it">IT</button>
+        </div>
+      </div>
+
+      <!-- Hamburger Menu -->
+      <button class="menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+      <!-- Slide 1 -->
+      <div class="slide active"
+        style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2 data-lang-key="srv_metal">Construction Métallique</h2>
+          <p data-lang-key="hero_metal_desc">Des structures métalliques robustes et précises adaptées aux besoins industriels complexes.</p>
+          <a href="services.html" class="btn" data-lang-key="hero_read_more">Lire la Suite</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide"
+        style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2 data-lang-key="srv_mech">Fabrication Mécanique</h2>
+          <p data-lang-key="hero_mech_desc">Des techniques de fabrication de pointe garantissant durabilité et efficacité.</p>
+          <a href="services.html" class="btn" data-lang-key="hero_read_more">Lire la Suite</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide"
+        style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2 data-lang-key="srv_maint">Maintenance Mécanique Industrielle</h2>
+          <p data-lang-key="hero_maint_desc">Garantissez des opérations fluides grâce à des services de diagnostic et de réparation experts.</p>
+          <a href="services.html" class="btn" data-lang-key="hero_read_more">Lire la Suite</a>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide"
+        style="background-image: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2 data-lang-key="srv_solar">Structure pour Kit Solaire</h2>
+          <p data-lang-key="hero_solar_desc">Cadres durables spécialement conçus pour les installations d'énergie solaire.</p>
+          <a href="services.html" class="btn" data-lang-key="hero_read_more">Lire la Suite</a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="slider-nav">
+        <div class="slider-arrow prev-slide"><i class="fa-solid fa-chevron-left"></i></div>
+        <div class="slider-arrow next-slide"><i class="fa-solid fa-chevron-right"></i></div>
+      </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="section">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <h2 class="section-title" data-lang-key="sect_services" style="margin-bottom: 10px;">Nos Services</h2>
+          <p data-lang-key="srv_sub_title" style="color: var(--text-gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Des solutions complètes pour tous vos besoins industriels et énergétiques</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-hammer"></i></div>
+            <div class="service-content">
+              <h3 data-lang-key="srv_metal">Construction Métallique</h3>
+              <p data-lang-key="srv_metal_desc">Nous fournissons des solutions de structure métallique de haute qualité, conçues pour répondre à des normes industrielles strictes et offrir une longévité incroyable.</p>
+              <a href="services.html#metal" class="service-link">
+                <span data-lang-key="hero_read_more">Lire la Suite</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-cogs"></i></div>
+            <div class="service-content">
+              <h3 data-lang-key="srv_mech">Fabrication Mécanique</h3>
+              <p data-lang-key="srv_mech_desc">Production de pièces mécaniques de précision à l'aide de machines modernes pour répondre aux besoins d'assemblage et de fabrication complexes.</p>
+              <a href="services.html#mech" class="service-link">
+                <span data-lang-key="hero_read_more">Lire la Suite</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+            <div class="service-content">
+              <h3 data-lang-key="srv_maint">Maintenance Mécanique Industrielle</h3>
+              <p data-lang-key="srv_maint_desc">Solutions de maintenance complètes visant à prolonger la durée de vie des machines et à prévenir les temps d'arrêt opérationnels coûteux.</p>
+              <a href="services.html#maint" class="service-link">
+                <span data-lang-key="hero_read_more">Lire la Suite</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-solar-panel"></i></div>
+            <div class="service-content">
+              <h3 data-lang-key="srv_solar">Structure pour Kit Solaire</h3>
+              <p data-lang-key="srv_solar_desc">Conception et construction de structures de montage résilientes parfaitement adaptées pour des systèmes d'énergie solaire efficaces.</p>
+              <a href="services.html#solar" class="service-link">
+                <span data-lang-key="hero_read_more">Lire la Suite</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="section about-preview">
+      <div class="container">
+        <div class="about-preview-inner">
+          <h2 class="section-title" data-lang-key="home_about_title">À Propos de Delta Team Industry</h2>
+          <p data-lang-key="home_about_desc">Delta Team Industry est une entreprise dynamique de fabrication et d'ingénierie apportant des solutions modernes aux défis industriels complexes.</p>
+          <a href="about.html" class="btn" data-lang-key="hero_read_more">Lire la Suite</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- About Col -->
+        <div class="footer-col">
+          <a href="index.html" style="display: inline-block; margin-bottom: 20px;">
+            <img src="651883048_771370736047629_4408473075126551943_n.png" alt="Delta Team Industry Logo" class="site-logo">
+          </a>
+          <p data-lang-key="footer_tagline" style="margin-bottom: 15px;">Votre partenaire de confiance pour tous vos besoins en services énergétiques et industriels au Maroc.</p>
+          <ul class="footer-contact" style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+              <i class="fa-solid fa-location-dot" style="color: var(--primary-orange); margin-top: 4px;"></i>
+              <span data-lang-key="footer_address">42 avenue des forces auxiliaires, Etage 1, Hay Raja, Casablanca</span>
+            </li>
+            <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+              <i class="fa-solid fa-phone" style="color: var(--primary-orange);"></i>
+              <span style="direction: ltr; display: inline-block;">+212 5 22 70 96 51</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 10px;">
+              <i class="fa-regular fa-envelope" style="color: var(--primary-orange);"></i>
+              <span>Deltateamindustry.ma@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 data-lang-key="footer_quick_links">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-lang-key="nav_home">Home</a></li>
+            <li><a href="about.html" data-lang-key="nav_about">About</a></li>
+            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+            <li><a href="gallery.html" data-lang-key="nav_gallery">Gallery</a></li>
+            <li><a href="partners.html" data-lang-key="nav_partners">Partners</a></li>
+            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <h4 data-lang-key="footer_our_services">Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#metal" data-lang-key="srv_metal">Metal Construction</a></li>
+            <li><a href="services.html#mech" data-lang-key="srv_mech">Mechanical Manufacturing</a></li>
+            <li><a href="services.html#maint" data-lang-key="srv_maint">Industrial Mechanical Maintenance</a></li>
+            <li><a href="services.html#solar" data-lang-key="srv_solar">Structure for Solar Kit</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p data-lang-key="footer_rights">&copy; 2026 Delta Team Industry. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    // Home Page Specific Slider Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.slide');
+      const nextBtn = document.querySelector('.next-slide');
+      const prevBtn = document.querySelector('.prev-slide');
+      let currentSlide = 0;
+      let slideInterval;
+
+      function goToSlide(n) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (n + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }
+
+      function nextSlide() { goToSlide(currentSlide + 1); }
+      function prevSlide() { goToSlide(currentSlide - 1); }
+
+      function resetInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+      }
+
+      nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+      prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
+
+      // Start auto slide
+      slideInterval = setInterval(nextSlide, 5000);
+    });
+  </script>
+</body>
+
+</html>

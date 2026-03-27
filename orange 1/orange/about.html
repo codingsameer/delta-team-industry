@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Delta Team Industry">
+  <title>Delta Team Industry | About</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* About Page Specific Styles */
+    .page-hero {
+      background-color: var(--primary-orange);
+      color: var(--bg-white);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+    }
+    
+    /* Adds a slight geometric pattern or overlay to the orange banner */
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: radial-gradient(var(--bg-white) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.1;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: var(--bg-white);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      color: var(--text-gray);
+      margin-bottom: 25px;
+    }
+
+    .highlight-box {
+      background: var(--bg-light-gray);
+      border-left: 5px solid var(--primary-orange);
+      padding: 30px;
+      margin: 40px 0;
+      border-radius: 4px;
+    }
+
+    .highlight-box h3 {
+      margin-bottom: 15px;
+      color: var(--text-dark);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo-container">
+        <img src="651883048_771370736047629_4408473075126551943_n.png" alt="Delta Team Industry Logo" class="site-logo">
+      </a>
+
+      <nav class="nav-container">
+        <div class="main-nav">
+          <ul>
+            <li><a href="index.html" data-lang-key="nav_home">Home</a></li>
+            <li><a href="about.html" class="active" data-lang-key="nav_about">About</a></li>
+            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+            <li><a href="gallery.html" data-lang-key="nav_gallery">Gallery</a></li>
+            <li><a href="partners.html" data-lang-key="nav_partners">Partners</a></li>
+            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="header-utils-mobile" style="display: none;">
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="fr">FR</button> |
+            <button class="lang-btn" data-lang="it">IT</button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-utils">
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="fr">FR</button> |
+          <button class="lang-btn" data-lang="it">IT</button>
+        </div>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Orange Header Banner (Requested explicitly) -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-lang-key="nav_about">About Us</h1>
+        <p style="position: relative; z-index: 2; font-size: 1.2rem;" data-lang-key="home_about_title">Delta Team Industry</p>
+      </div>
+    </section>
+
+    <!-- Company Details -->
+    <section class="section">
+      <div class="container about-content">
+        <div class="highlight-box">
+          <h3 data-lang-key="home_about_title">Who We Are</h3>
+          <p class="about-text" data-lang-key="home_about_desc">Delta Team Industry is a dynamic manufacturing and engineering company bringing modern solutions to complex industrial challenges.</p>
+          <p class="about-text">We specialize in providing high-quality, durable, and precise engineering and manufacturing services. With years of experience and a commitment to technological advancement, we ensure that every project we undertake meets rigorous international standards.</p>
+        </div>
+
+        <h3>Our Core Values</h3>
+        <p class="about-text">
+          - <strong>Quality First:</strong> We use top-tier materials and modern techniques.<br>
+          - <strong>Precision Engineering:</strong> Every detail counts in industrial manufacturing.<br>
+          - <strong>Customer Reliability:</strong> We deliver on time and within budget.<br>
+          - <strong>Safety & Sustainability:</strong> Committed to a safe working environment and responsible practices.
+        </p>
+
+        <!-- Removing the "Ready to Start Your Project" full orange section as requested -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- About Col -->
+        <div class="footer-col">
+          <a href="index.html" style="display: inline-block; margin-bottom: 20px;">
+            <img src="651883048_771370736047629_4408473075126551943_n.png" alt="Delta Team Industry Logo" class="site-logo">
+          </a>
+          <p style="margin-bottom: 15px;">Votre partenaire de confiance pour tous vos besoins en services énergétiques et industriels au Maroc.</p>
+          <ul class="footer-contact" style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+              <i class="fa-solid fa-location-dot" style="color: var(--primary-orange); margin-top: 4px;"></i>
+              <span>42 avenue des forces auxiliaires, Etage 1, Hay Raja, Casablanca</span>
+            </li>
+            <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+              <i class="fa-solid fa-phone" style="color: var(--primary-orange);"></i>
+              <span style="direction: ltr; display: inline-block;">+212 5 22 70 96 51</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 10px;">
+              <i class="fa-regular fa-envelope" style="color: var(--primary-orange);"></i>
+              <span>Deltateamindustry.ma@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 data-lang-key="footer_quick_links">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-lang-key="nav_home">Home</a></li>
+            <li><a href="about.html" data-lang-key="nav_about">About</a></li>
+            <li><a href="services.html" data-lang-key="nav_services">Services</a></li>
+            <li><a href="gallery.html" data-lang-key="nav_gallery">Gallery</a></li>
+            <li><a href="partners.html" data-lang-key="nav_partners">Partners</a></li>
+            <li><a href="contact.html" data-lang-key="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <h4 data-lang-key="footer_our_services">Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#metal" data-lang-key="srv_metal">Metal Construction</a></li>
+            <li><a href="services.html#mech" data-lang-key="srv_mech">Mechanical Manufacturing</a></li>
+            <li><a href="services.html#maint" data-lang-key="srv_maint">Industrial Mechanical Maintenance</a></li>
+            <li><a href="services.html#solar" data-lang-key="srv_solar">Structure for Solar Kit</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p data-lang-key="footer_rights">&copy; 2026 Delta Team Industry. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
